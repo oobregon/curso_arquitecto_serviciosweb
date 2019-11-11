@@ -1,7 +1,5 @@
 package principal;
 
-import java.rmi.RemoteException;
-
 import org.apache.axis.message.MessageElement;
 import org.tempuri.OVCServWeb.OVCCallejero.Callejero_x0020_de_x0020_la_x0020_sede_x0020_electrónica_x0020_del_x0020_catastroSoap;
 import org.tempuri.OVCServWeb.OVCCallejero.Callejero_x0020_de_x0020_la_x0020_sede_x0020_electrónica_x0020_del_x0020_catastroSoapProxy;
@@ -21,5 +19,4 @@ public class PruebaProvincias {
 			System.out.println(m.getAsString());
 		}
 	}
-
 }
