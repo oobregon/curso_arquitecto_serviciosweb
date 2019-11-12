@@ -30,4 +30,10 @@
     	type="javax.sql.DataSource" 
     	name="reflibros" 
     	global="jdbc/libreriads"/>
+
+	<ResourceLink 
+    	type="javax.sql.DataSource" 
+    	name="refagenda" 
+    	global="jdbc/agendads"/>    	
+    	       
 </Context>
