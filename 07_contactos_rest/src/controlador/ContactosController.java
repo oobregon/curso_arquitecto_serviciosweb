@@ -54,11 +54,11 @@ public class ContactosController {
 	
 	@PostMapping(value="/accion", produces = MediaType.TEXT_PLAIN_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public String altaContacto(@RequestBody Contacto contacto) {
-		String resultado = "Alta realizada correctamente";
+		String resultado = "0"; // Finalización existosa
 		try {
 			daoCon.altaContactoParametrizado(contacto);			
 		} catch (Exception ex) {
-			resultado = "Alta realizada incorrectamente";
+			resultado = "1";
 		}						
 		return resultado;
 	}
