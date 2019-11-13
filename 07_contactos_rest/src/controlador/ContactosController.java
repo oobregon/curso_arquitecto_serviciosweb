@@ -18,6 +18,7 @@ import model.Contacto;
 // Podríamos poner a todos los métodos las misma url, con lo cual, te ahorras poner la misma:
 // Le asignamos la url de base a nivel de clase:
 // @RestController (value = "/busqueda")
+//
 // Así, los métodos de búsqueda POr ejemplo, en el caso de las urls de busqueda quedarían así:
 // @GetMapping (produces = MediaType.APPLICATION_JSON_VALUE) 
 // dameContactos()
