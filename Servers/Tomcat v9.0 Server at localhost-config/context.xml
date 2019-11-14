@@ -34,6 +34,5 @@
 	<ResourceLink 
     	type="javax.sql.DataSource" 
     	name="refagenda" 
-    	global="jdbc/agendads"/>    	
-    	       
+    	global="jdbc/agendads"/>
 </Context>
