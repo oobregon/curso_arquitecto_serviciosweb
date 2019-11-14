@@ -9,6 +9,7 @@
 	
 	<mvc:annotation-driven />
 	<context:component-scan base-package="controlador" />
+	<context:component-scan base-package="servicio" />
 	
 	<!-- Objeto encargado de resolver la navegación, de buscar la jsp a la que dirigir el flujo de ejecucion -->
 	<bean id="Resolver"
@@ -16,5 +17,6 @@
 		<property name="prefix" value="/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
-
+	<mvc:view-controller path="aNuevoContacto" view-name="altaContacto"/>	
+	<mvc:view-controller path="aMenu" view-name="menu"/>
 </beans>
