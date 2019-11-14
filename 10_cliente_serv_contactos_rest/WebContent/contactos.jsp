@@ -26,14 +26,16 @@
 							<td>idContacto</td>
 							<td>Nombre</td>
 							<td>Correo Electrónico</td>
-							<td>Edad</td>									
+							<td>Edad</td>
+							<td>Acción</td>									
 						</tr>
 						<c:forEach var="contacto" items="${contactos}">				
 						<tr>
 							<td>${contacto.idContacto}</td>
 							<td>${contacto.nombre}</td>	
 							<td>${contacto.email}</td>
-							<td>${contacto.edad}</td>																	
+							<td>${contacto.edad}</td>
+							<td><a href="eliminar?idContacto=${contacto.idContacto}">Eliminar</a></td>																	
 						</tr>			
 						</c:forEach>
 				</table>

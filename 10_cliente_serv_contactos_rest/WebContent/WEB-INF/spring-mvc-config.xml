@@ -17,6 +17,13 @@
 		<property name="prefix" value="/"></property>
 		<property name="suffix" value=".jsp"></property>
 	</bean>
+	
+	<!-- Le informamos a spring que este objeto nos lo tiene que instanciar para que podamos 
+	realizar inyeccion de dependencias -->
+	<bean id="Rest"
+		class="org.springframework.web.client.RestTemplate">
+	</bean>
+	
 	<mvc:view-controller path="aNuevoContacto" view-name="altaContacto"/>	
 	<mvc:view-controller path="aMenu" view-name="menu"/>
 </beans>
