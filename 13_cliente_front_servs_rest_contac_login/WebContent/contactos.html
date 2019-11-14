@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Mostrar Contactos</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+<script type="text/javascript">
+
+	function enviarPeticion() {
+		var url = "http://localhost:8080/07_contactos_rest/busqueda";
+		$.get(url,function(respuesta,estado) {
+			procesarRespuesta(respuesta);
+		});	
+	}
+	
+	
+	function procesarRespuesta(json) {
+		var tabla = "<br/><table border='1'><tr><th>idContacto</th><th>edad</th><th>email</th><th>nombre</th></tr>"
+		for(var i=0;i<json.length;i++) {
+			tabla+="<tr><td>" + json[i].idContacto + "</td>";
+			tabla+="<td>" + json[i].edad + "</td>";			
+			tabla+="<td>" + json[i].email + "</td>";
+			tabla+="<td>" + json[i].nombre + "</td></tr>";
+		}
+		tabla+= "</table>";
+		$("#tablaLibros").html(tabla);
+	}
+
+	
+</script>
+</head>
+<body onload="enviarPeticion();">
+	<div class="container">		
+		<div id="tablaLibros">
+		</div>
+		<div class="col-sm-10">					
+			<button type="button" class="btn btn-default" onclick="window.location.href='menu.html';">Volver</button>
+		</div>		
+	</div>
+</body>
+</html>
