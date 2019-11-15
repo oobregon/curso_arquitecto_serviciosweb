@@ -21,6 +21,11 @@
 		});	
 	}
 	
+	function eliminarContacto(idContacto) {
+		var url = "accion?idContacto=${contacto.idContacto}";
+		alert('Contacto a eliminar ' + idContacto);
+	}
+	
 	
 	function procesarRespuesta(json) {
 		var tabla = "<br/><table border='1'><tr><th>idContacto</th><th>edad</th><th>email</th><th>nombre</th></tr>"
@@ -28,10 +33,11 @@
 			tabla+="<tr><td>" + json[i].idContacto + "</td>";
 			tabla+="<td>" + json[i].edad + "</td>";			
 			tabla+="<td>" + json[i].email + "</td>";
-			tabla+="<td>" + json[i].nombre + "</td></tr>";
+			tabla+="<td>" + json[i].nombre + "</td>";
+			tabla+="<td><a href='#' onclick='eliminarContacto(" + json[i].idContacto + ");'>Eliminar</a></td></tr>";
 		}
 		tabla+= "</table>";
-		$("#tablaLibros").html(tabla);
+		$("#tablaContactos").html(tabla);
 	}
 
 	
@@ -39,7 +45,7 @@
 </head>
 <body onload="enviarPeticion();">
 	<div class="container">		
-		<div id="tablaLibros">
+		<div id="tablaContactos">
 		</div>
 		<div class="col-sm-10">					
 			<button type="button" class="btn btn-default" onclick="window.location.href='menu.html';">Volver</button>
