@@ -14,7 +14,7 @@
 
 <script type="text/javascript">
 
-	function enviarPeticion() {
+	function mostrarContactos() {
 		var url = "http://localhost:8080/07_contactos_rest/busqueda";
 		$.get(url,function(respuesta,estado) {
 			procesarRespuesta(respuesta);
@@ -22,8 +22,9 @@
 	}
 	
 	function eliminarContacto(idContacto) {
-		var url = "accion?idContacto=${contacto.idContacto}";
-		alert('Contacto a eliminar ' + idContacto);
+		var url = "http://localhost:8080/07_contactos_rest/accion";		
+		$.ajax({"url":url+"/"+idContacto,"type":"DELETE"});		
+		mostrarContactos();
 	}
 	
 	
@@ -43,7 +44,7 @@
 	
 </script>
 </head>
-<body onload="enviarPeticion();">
+<body onload="mostrarContactos();">
 	<div class="container">		
 		<div id="tablaContactos">
 		</div>

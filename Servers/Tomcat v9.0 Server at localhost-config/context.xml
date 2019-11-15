@@ -26,6 +26,7 @@
     <!--
     <Manager pathname="" />
     -->
+    
     <ResourceLink 
     	type="javax.sql.DataSource" 
     	name="reflibros" 
