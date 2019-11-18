@@ -15,21 +15,25 @@ import daos.DaoContactos;
 import model.Contacto;
 
 // 
-// Podríamos poner a todos los métodos las misma url, con lo cual, te ahorras poner la misma:
+// Podríamos asignar a todos los métodos/recursos la misma url, con lo cual, nos ahorramos el mismo
+// value en cada método; para conseguir esto tenemos que declarar la url a nivel de Clase:
 // Le asignamos la url de base a nivel de clase:
 // @RestController (value = "/busqueda")
 //
-// Así, los métodos de búsqueda POr ejemplo, en el caso de las urls de busqueda quedarían así:
+// Así, los métodos de búsqueda Por ejemplo, en el caso de las urls de busqueda quedarían de la siguiente manera,
+// no siendo necesario especificar la propiedad value porque ya está establecida a nivel de clase:
 // @GetMapping (produces = MediaType.APPLICATION_JSON_VALUE) 
 // dameContactos()
 //
 // @GetMapping (value = "/{email}",produces = MediaType.APPLICATION_JSON_VALUE)
+// dameContactoPorCorrElec()
+
 @RestController
 public class ContactosController {
 	@Autowired
 	DaoContactos daoCon;
 	
-	@GetMapping (value = "/busqueda",produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping (value = "/busqueda", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Contacto> dameContactos() {
 		List<Contacto> contactos = daoCon.dameContactos();		
 		return contactos;

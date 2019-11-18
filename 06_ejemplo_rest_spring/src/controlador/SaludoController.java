@@ -29,8 +29,10 @@ public class SaludoController {
 	
 	//Recurso 3
 	// Nosotros trabajamos con la clase Persona como tipo de devolución. Internamente, cuando se produzca la devolución, jackson mapea
-	// auotmáticmetne el javabean a json. 
-	// Entonces no retorna un objeto Persona, sino que retorna un objeto json 
+	// auotmáticmetne el javabean X a json. 
+	// Entonces no viaja, no se devuelve un objeto Persona, sino que retorna un objeto json. El cliente que recoja este objeto
+	// json tendrá que tener un javabean cuyos metodos get/set tienen que llamarse igual que los get/set del javabean del servicio
+	// REST. Si el nombre del metodo get/set no es el mismo, entonces donde se esperaba valor se devolverá un null.
 	@GetMapping (value = "/ficha",produces = MediaType.APPLICATION_JSON_VALUE)
 	public Persona obtenerFichaJson() {
 		return new Persona("Oscar","espana@gmail.com",45);

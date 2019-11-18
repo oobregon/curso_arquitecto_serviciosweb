@@ -3,12 +3,12 @@ package model;
 public class Persona {
 	private String nombre;
 	private String email;
-	private int edad;
+	private int hey;
 	public Persona(String nombre, String email, int edad) {
 		super();
 		this.nombre = nombre;
 		this.email = email;
-		this.edad = edad;
+		this.hey = edad;
 	}
 	
 	public Persona() {}
@@ -30,10 +30,10 @@ public class Persona {
 	}
 
 	public int getEdad() {
-		return edad;
+		return hey;
 	}
 
 	public void setEdad(int edad) {
-		this.edad = edad;
+		this.hey = edad;
 	}	
 }
