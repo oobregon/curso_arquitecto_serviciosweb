@@ -13,7 +13,9 @@ public class ServicioClienteImpl implements ServicioCliente {
 
 	@Override
 	public void crear(String usuario, String contra) {		
-		Cliente cliente = daoCli.findByUsuarioAndPassword(usuario, contra); 
+		Cliente cliente = daoCli.findByUsuarioAndPassword(usuario, contra);
+		cliente.setIdCliente(0);
+		cliente.setUsuario("hey");
 		if (cliente != null) {
 			daoCli.save(cliente);
 		}		

@@ -24,12 +24,12 @@ public class ContactosController {
 		} else {
 			return "1";
 		}		
-	}
+	}	
 	
-	
-	@PostMapping (value = "/crear/{usuario}/{contra}",consumes= MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
-	public void altaClienteVUno(@RequestBody Cliente cliente) {
-		sCli.crear(cliente);
+	@PostMapping (value = "/crear/{usu}/{con}",consumes= MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
+	public void altaClienteVUno(@PathVariable("usu") String usuario,
+								@PathVariable("con") String contra) {
+		sCli.crear(usuario, contra);		
 	}
 	
 	@PostMapping (value = "/crear",consumes= MediaType.APPLICATION_JSON_VALUE,produces=MediaType.APPLICATION_JSON_VALUE)
