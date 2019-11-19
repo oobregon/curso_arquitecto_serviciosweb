@@ -9,9 +9,9 @@ public class PruebaServicioSaludo {
 		String url = "http://localhost:8080/14_securizar_servicio_rest_saludo/saludo";
 		String urlFicha = "http://localhost:8080/14_securizar_servicio_rest_saludo/ficha";
 		BasicAuthenticationInterceptor interceptor = new BasicAuthenticationInterceptor("user1","user1"); 
-		RestTemplate rt = new RestTemplate();
-		
+		RestTemplate rt = new RestTemplate();		
 		rt.getInterceptors().add(interceptor);
+		
 		// llamada a Recurso 1
 		String resultado = rt.getForObject(url,String.class);
 		System.out.println("Resultado del recurso 1 " + resultado);
