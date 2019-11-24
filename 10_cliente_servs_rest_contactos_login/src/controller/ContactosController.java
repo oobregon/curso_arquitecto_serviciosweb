@@ -14,7 +14,8 @@ import model.Contacto;
 public class ContactosController {
 	@Autowired
 	RestTemplate template;
-	String url="http://localhost:8080/07_crud_contactos_rest/contactos";
+	String url="http://localhost:8080/07_contactos_rest/busqueda";
+	String urlEliminar = "http://localhost:8080/07_contactos_rest/accion";
 	
 	@GetMapping("/doContactos")
 	public String obtenerContactos(HttpServletRequest request) {
@@ -25,8 +26,7 @@ public class ContactosController {
 	
 	@GetMapping("/doEliminar")
 	public String eliminar(@RequestParam("idContacto") int idContacto) {
-		template.delete(url+"/"+idContacto);
+		template.delete(urlEliminar+"/"+idContacto);
 		return "forward:/doContactos";
-	}
-	
+	}	
 }

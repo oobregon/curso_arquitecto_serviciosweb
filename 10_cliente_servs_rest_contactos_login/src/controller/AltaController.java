@@ -14,7 +14,7 @@ import model.Contacto;
 public class AltaController {
 	@Autowired
 	RestTemplate template;	
-	String url="http://localhost:8080/07_crud_contactos_rest/contactos";
+	String url="http://localhost:8080/07_contactos_rest/accion";
 	
 	@GetMapping(value="/toAlta")
 	public String inicio(Model model) {
@@ -22,12 +22,12 @@ public class AltaController {
 		model.addAttribute("contacto",cl);
 		return "alta";
 	}
+	
 	//es ejecutado al producirse el submit del formulario
-	//de la página de registro
+	//de la página de alta
 	@PostMapping(value="/doAlta")
 	public String alta(@ModelAttribute("contacto") Contacto contacto) {
-		template.postForLocation(url, contacto);
+		template.postForLocation(url,contacto);
 		return "menu";
-	}
-	
+	}	
 }

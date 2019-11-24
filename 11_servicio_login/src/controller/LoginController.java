@@ -15,6 +15,7 @@ import service.ServiceClientes;
 public class LoginController {
 	@Autowired
 	ServiceClientes sClientes;
+	
 	@GetMapping(value = "/login/{user}/{pwd}", produces=MediaType.APPLICATION_JSON_VALUE)
 	public DtoCliente login(@PathVariable("user") String user, 
 						@PathVariable("pwd")String pwd) {
@@ -28,6 +29,5 @@ public class LoginController {
 				cliente.getTelefono(),
 				cliente.getUsuario());
 		return dtoCliente;
-	}
-	
+	}	
 }
