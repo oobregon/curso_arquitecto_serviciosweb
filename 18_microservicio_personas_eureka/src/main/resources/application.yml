@@ -1,0 +1,12 @@
+server:
+  port: 0
+  servlet:
+    context-path: /personas
+eureka:
+  instance:
+    ip-address: 10.2.4.24
+    prefer-ip-address: true
+    instance-id: 10.2.4.24:${server.port}-${random.value}
+  client:         
+    service-url:
+      defaultZone: http://10.2.4.24:8761/eureka

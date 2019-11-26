@@ -20,6 +20,7 @@ public class BuscadorController {
 	
 	@Autowired
 	RestTemplate template;
+
 	
 	@GetMapping(value = "/buscar/{email}",produces = MediaType.APPLICATION_JSON_VALUE)
 	public Persona bucarPersona(@PathVariable("email") String email) {
