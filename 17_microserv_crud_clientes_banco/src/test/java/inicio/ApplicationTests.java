@@ -19,7 +19,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import model.Cliente;
 
 @RunWith (SpringRunner.class)
-// @SpringBootTest (classes = SaludoController.class)
 @AutoConfigureMockMvc
 @SpringBootTest
 class ApplicationTests {

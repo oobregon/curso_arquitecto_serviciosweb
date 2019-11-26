@@ -56,9 +56,10 @@ public class ContactosController {
 		return resultado;
 	}
 	
-	@PostMapping(value="/accion", produces = MediaType.TEXT_PLAIN_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value="/accion", consumes = MediaType.APPLICATION_JSON_VALUE, 
+								  produces = MediaType.TEXT_PLAIN_VALUE)
 	public String altaContacto(@RequestBody Contacto contacto) {
-		String resultado = "0"; // Finalización existosa
+		String resultado = "0"; // Finalización exitosa
 		try {
 			daoCon.altaContactoParametrizado(contacto);			
 		} catch (Exception ex) {

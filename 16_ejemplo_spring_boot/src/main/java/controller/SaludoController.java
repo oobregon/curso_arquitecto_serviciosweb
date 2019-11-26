@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SaludoController {
 	
 	@GetMapping (value = "/saludo",produces = MediaType.TEXT_PLAIN_VALUE)
-	public String saludar( ) {
+	public String saludar() {
 		return "Bienvenido a spring boot";
 	}
 	

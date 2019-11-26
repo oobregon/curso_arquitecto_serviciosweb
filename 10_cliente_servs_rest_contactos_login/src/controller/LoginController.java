@@ -16,12 +16,8 @@ public class LoginController {
 	
 	@PostMapping("/doLogin")
 	public String login(@RequestParam("user") String user,
-						@RequestParam("pwd") String pwd) {
-		
+						@RequestParam("pwd") String pwd) {		
 		Cliente cliente=template.getForObject(url+"/"+user+"/"+pwd, Cliente.class);
 		return cliente!=null?"menu":"login";
-	}
-	
-	
-	
+	}	
 }
